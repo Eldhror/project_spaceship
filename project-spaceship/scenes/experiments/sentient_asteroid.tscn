@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://mg1xkusrqmrp"]
 
-[node name="Node3D" type="Node3D" unique_id=1148656564]
+[ext_resource type="Script" uid="uid://cx62iatyp873i" path="res://scenes/experiments/sentient_asteroid.gd" id="1_26qi8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_iu7so"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu7so"]
+albedo_color = Color(1, 0.38431373, 1, 1)
+
+[node name="SentientAsteroid" type="Node3D" unique_id=1148656564]
+script = ExtResource("1_26qi8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=303745164]
+mesh = SubResource("SphereMesh_iu7so")
+surface_material_override/0 = SubResource("StandardMaterial3D_iu7so")
