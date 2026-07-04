@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkfqsg6os0ypt" path="res://scenes/test_site/test_ground.tscn" id="1_4yf8g"]
 [ext_resource type="PackedScene" uid="uid://by46fr73yoxy1" path="res://scenes/player/Player.tscn" id="2_gwhf3"]
+[ext_resource type="PackedScene" uid="uid://mg1xkusrqmrp" path="res://scenes/experiments/sentient_asteroid.tscn" id="3_gwhf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yf8g"]
 
@@ -32,3 +33,6 @@ compositor = SubResource("Compositor_4yf8g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=198504923]
 transform = Transform3D(1, 0, 0, 0, 0.695474, 0.7185512, 0, -0.7185512, 0.695474, 0, 31, 0)
+
+[node name="SentientAsteroid" parent="." unique_id=906481793 instance=ExtResource("3_gwhf3")]
+transform = Transform3D(0.8451312, 0, -0.5345589, 0, 1, 0, 0.5345589, 0, 0.8451312, 0, 2.4406738, 0)
