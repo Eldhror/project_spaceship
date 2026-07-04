@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mg1xkusrqmrp"]
 
 [ext_resource type="Script" uid="uid://cx62iatyp873i" path="res://scenes/experiments/sentient_asteroid.gd" id="1_26qi8"]
+[ext_resource type="AudioStream" uid="uid://dppcwubmpvrp4" path="res://assets/sound/portal-endermen.mp3" id="2_f203c"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_iu7so"]
 
@@ -13,3 +14,6 @@ script = ExtResource("1_26qi8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=303745164]
 mesh = SubResource("SphereMesh_iu7so")
 surface_material_override/0 = SubResource("StandardMaterial3D_iu7so")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=497868157]
+stream = ExtResource("2_f203c")
