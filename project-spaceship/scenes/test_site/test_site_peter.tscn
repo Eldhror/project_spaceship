@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://cjnghxsqn5wmg"]
+[gd_scene format=3 uid="uid://y87vjh8vj2ml"]
 
 [ext_resource type="PackedScene" uid="uid://mg1xkusrqmrp" path="res://scenes/experiments/sentient_asteroid.tscn" id="1_3n7op"]
 
 [node name="TestSitePeter" type="Node3D" unique_id=1886781211]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=620861634]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.8789063)
+transform = Transform3D(1, 0, 0, 0, 0.97807133, 0.20827018, 0, -0.20827018, 0.97807133, 0, 6.770752, 15.9296875)
 
 [node name="SentientAsteroid1" parent="." unique_id=1148656564 instance=ExtResource("1_3n7op")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2101777339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1844482, 0)
