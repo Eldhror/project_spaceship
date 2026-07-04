@@ -10,7 +10,11 @@
 script = ExtResource("1_wr5hl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1823088925]
+visible = false
 mesh = SubResource("CapsuleMesh_gfjak")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=780575183]
 shape = SubResource("CapsuleShape3D_4kuee")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1518563498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80134666, 0)
