@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://catfslku4v802"]
+
+[ext_resource type="Script" uid="uid://dsp4tgqxhbm7n" path="res://scenes/experiments/egg_collision.gd" id="1_wsgy1"]
+[ext_resource type="Script" uid="uid://cm7regqeitde" path="res://scenes/experiments/mesh_instance_3d.gd" id="2_dgpih"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dgpih"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wsgy1"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dgpih"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pdmvr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pdmvr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgpih"]
+albedo_color = Color(0.3529412, 0.39607844, 0.4, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5otp3"]
+material = SubResource("StandardMaterial3D_dgpih")
+
+[node name="Szene" type="Node3D" unique_id=1561889202]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1438674825]
+transform = Transform3D(1, 0, 0, 0, 0.96725446, 0.2538086, 0, -0.2538086, 0.96725446, 0, 3.1051712, 5.83881)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=334562812]
+physics_material_override = SubResource("PhysicsMaterial_dgpih")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1985321690]
+shape = SubResource("BoxShape3D_wsgy1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1743611201]
+mesh = SubResource("BoxMesh_dgpih")
+
+[node name="egg" type="RigidBody3D" parent="." unique_id=318278093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3496957, 0)
+physics_material_override = SubResource("PhysicsMaterial_pdmvr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="egg" unique_id=338454588]
+shape = SubResource("SphereShape3D_pdmvr")
+script = ExtResource("1_wsgy1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="egg" unique_id=1230471166]
+mesh = SubResource("SphereMesh_5otp3")
+script = ExtResource("2_dgpih")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=437727214]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.17821693, 4.9567723, 0.505074)
+light_energy = 5.0
+
+[connection signal="body_entered" from="egg" to="egg/CollisionShape3D" method="_on_egg_body_entered"]
+[connection signal="body_shape_entered" from="egg" to="egg/CollisionShape3D" method="_on_egg_body_shape_entered"]
