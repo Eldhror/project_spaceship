@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://dkfqsg6os0ypt"]
 
+[ext_resource type="Texture2D" uid="uid://b8tab1a416ev0" path="res://assets/prototype.png" id="1_a8f55"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_yyyhe"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1to8w"]
+albedo_texture = ExtResource("1_a8f55")
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_yyyhe"]
+material = SubResource("StandardMaterial3D_1to8w")
 size = Vector3(100, 1, 100)
 
 [node name="TestGround" type="StaticBody3D" unique_id=1490277025]

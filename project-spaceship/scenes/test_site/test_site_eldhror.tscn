@@ -3,9 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://dkfqsg6os0ypt" path="res://scenes/test_site/test_ground.tscn" id="1_4yf8g"]
 [ext_resource type="PackedScene" uid="uid://by46fr73yoxy1" path="res://scenes/player/Player.tscn" id="2_gwhf3"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4yf8g"]
+
+[sub_resource type="Sky" id="Sky_gwhf3"]
+sky_material = SubResource("ProceduralSkyMaterial_4yf8g")
+
+[sub_resource type="Environment" id="Environment_g0hdm"]
+background_mode = 2
+sky = SubResource("Sky_gwhf3")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4yf8g"]
+
+[sub_resource type="Compositor" id="Compositor_4yf8g"]
+
 [node name="TestSiteEldhror" type="Node3D" unique_id=573191776]
 
 [node name="TestGround" parent="." unique_id=1490277025 instance=ExtResource("1_4yf8g")]
 
 [node name="Player" parent="." unique_id=1661357372 instance=ExtResource("2_gwhf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7681761, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=789063043]
+environment = SubResource("Environment_g0hdm")
+camera_attributes = SubResource("CameraAttributesPractical_4yf8g")
+compositor = SubResource("Compositor_4yf8g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=198504923]
+transform = Transform3D(1, 0, 0, 0, 0.695474, 0.7185512, 0, -0.7185512, 0.695474, 0, 31, 0)
